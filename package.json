@@ -4,22 +4,23 @@
   "main": "index.js",
   "license": "MIT",
   "dependencies": {
-    "@types/jest": "^30.0.0",
-    "@types/supertest": "^6.0.3",
-    "express": "^5.2.1",
-    "jest": "^30.2.0",
-    "supertest": "^7.2.2",
-    "ts-jest": "^29.4.6"
+    "express": "^5.2.1"
   },
   "devDependencies": {
     "@types/express": "^5.0.6",
+    "@types/jest": "^30.0.0",
     "@types/node": "^25.0.8",
+    "@types/supertest": "^6.0.3",
+    "jest": "^30.2.0",
     "nodemon": "^3.1.11",
+    "supertest": "^7.2.2",
+    "ts-jest": "^29.4.6",
     "ts-node": "^10.9.2",
     "typescript": "^5.9.3"
   },
   "scripts": {
     "start": "nodemon --inspect dist/index.js",
-    "watch": "tsc -w"
+    "watch": "tsc -w",
+    "test": "jest --runInBand --detectOpenHandles --watch"
   }
 }

@@ -1,4 +1,4 @@
-enum Resolutions {
+export enum Resolutions {
   P144,
   P240,
   P360,
@@ -9,7 +9,7 @@ enum Resolutions {
   P2160,
 }
 
-type VideoType = {
+export type VideoType = {
   id: number;
   title: string;
   author: string;
@@ -19,3 +19,11 @@ type VideoType = {
   publicationDate: string;
   availableResolutions: Resolutions;
 };
+
+export enum HttpStatus {
+  OK = 200,
+  CREATED = 201,
+  NO_CONTENT = 204,
+  BAD_REQUEST = 400,
+  NOT_FOUND = 404,
+}
