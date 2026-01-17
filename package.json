@@ -15,7 +15,7 @@
     "typescript": "^5.9.3"
   },
   "scripts": {
-    "start": "nodemon --inspect dist/app.js",
+    "start": "nodemon --inspect dist/index.js",
     "watch": "tsc -w"
   }
 }
