@@ -1,0 +1,10 @@
+import { Router } from "express";
+import { videosController } from "../controllers/videos-controller";
+
+export const videosRouter = Router();
+
+videosRouter.get("/", videosController.getVideos);
+videosRouter.get("/:id", videosController.getVideoById);
+videosRouter.post("/", videosController.createVideo);
+videosRouter.put("/:id", videosController.updateVideo);
+videosRouter.delete("/:id", videosController.deleteVideo);
