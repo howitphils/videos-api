@@ -1,11 +1,13 @@
 import express from "express";
+import { db } from "./db/db";
 
 export const app = express();
 
-app.get("/", (req, res) => {
-  res.send("Hello World!");
+app.get("/videos", (req, res) => {
+  res.json(db);
 });
 
-app.get("/videos", (req, res) => {
-  res.json([{ id: 1, title: "Sample Video" }]);
+app.get("/videos/:id", (req, res) => {
+  const video = db.filter((v) => v.id === parseInt(req.params.id));
+  res.json(video);
 });
