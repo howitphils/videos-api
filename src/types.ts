@@ -12,13 +12,13 @@ export enum Resolutions {
 export type VideoInputModel = {
   title: string;
   author: string;
-  availableResolutions: Resolutions[];
+  availableResolutions: Resolutions;
 };
 
 export type UpdateVideoInputModel = {
   title: string;
   author: string;
-  availableResolutions: Resolutions[];
+  availableResolutions: Resolutions;
   canBeDownloaded: boolean;
   minAgeRestriction: number | null;
   publicationDate: string;
