@@ -1,6 +1,6 @@
-import { Resolutions, VideoType } from "../types";
+import { Resolutions, VideoViewModel } from "../types";
 
-export const db: VideoType[] = [
+export const db: VideoViewModel[] = [
   {
     id: 1,
     title: "Sample Video",

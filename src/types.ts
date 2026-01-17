@@ -9,7 +9,22 @@ export enum Resolutions {
   P2160,
 }
 
-export type VideoType = {
+export type VideoInputModel = {
+  title: string;
+  author: string;
+  availableResolutions: Resolutions[];
+};
+
+export type UpdateVideoInputModel = {
+  title: string;
+  author: string;
+  availableResolutions: Resolutions[];
+  canBeDownloaded: boolean;
+  minAgeRestriction: number | null;
+  publicationDate: string;
+};
+
+export type VideoViewModel = {
   id: number;
   title: string;
   author: string;
@@ -27,3 +42,12 @@ export enum HttpStatus {
   BAD_REQUEST = 400,
   NOT_FOUND = 404,
 }
+
+export type ErrorMessageType = {
+  message: string;
+  field: string;
+};
+
+export type ErrorResponseType = {
+  errorsMessages: ErrorMessageType[];
+};
