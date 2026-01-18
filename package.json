@@ -21,6 +21,6 @@
   "scripts": {
     "start": "nodemon --inspect dist/index.js",
     "watch": "tsc -w",
-    "test": "jest --runInBand --detectOpenHandles --watch"
+    "test": "jest --runInBand --detectOpenHandles --watchAll"
   }
 }
