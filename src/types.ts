@@ -9,16 +9,16 @@ export enum Resolutions {
   P2160,
 }
 
-export type VideoInputModel = {
+export type CreateVideoInputModel = {
   title: string;
   author: string;
-  availableResolutions: Resolutions;
+  availableResolutions: Resolutions[];
 };
 
 export type UpdateVideoInputModel = {
   title: string;
   author: string;
-  availableResolutions: Resolutions;
+  availableResolutions: Resolutions[];
   canBeDownloaded: boolean;
   minAgeRestriction: number | null;
   publicationDate: string;
@@ -32,7 +32,7 @@ export type VideoViewModel = {
   minAgeRestriction: number | null;
   createdAt: string;
   publicationDate: string;
-  availableResolutions: Resolutions;
+  availableResolutions: Resolutions[];
 };
 
 export enum HttpStatus {

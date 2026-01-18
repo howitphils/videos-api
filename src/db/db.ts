@@ -9,7 +9,7 @@ export const db: VideoViewModel[] = [
     minAgeRestriction: null,
     createdAt: "2023-01-01T00:00:00.000Z",
     publicationDate: "2023-01-02T00:00:00.000Z",
-    availableResolutions: Resolutions.P1080,
+    availableResolutions: [Resolutions.P1080],
   },
   {
     id: 2,
@@ -19,7 +19,7 @@ export const db: VideoViewModel[] = [
     minAgeRestriction: 18,
     createdAt: "2023-02-01T00:00:00.000Z",
     publicationDate: "2023-02-02T00:00:00.000Z",
-    availableResolutions: Resolutions.P720,
+    availableResolutions: [Resolutions.P720, Resolutions.P1080],
   },
   {
     id: 3,
@@ -29,7 +29,11 @@ export const db: VideoViewModel[] = [
     minAgeRestriction: 13,
     createdAt: "2023-03-01T00:00:00.000Z",
     publicationDate: "2023-03-02T00:00:00.000Z",
-    availableResolutions: Resolutions.P480,
+    availableResolutions: [
+      Resolutions.P144,
+      Resolutions.P240,
+      Resolutions.P360,
+    ],
   },
   {
     id: 4,
@@ -39,6 +43,6 @@ export const db: VideoViewModel[] = [
     minAgeRestriction: null,
     createdAt: "2023-04-01T00:00:00.000Z",
     publicationDate: "2023-04-02T00:00:00.000Z",
-    availableResolutions: Resolutions.P360,
+    availableResolutions: [Resolutions.P480, Resolutions.P720],
   },
 ];

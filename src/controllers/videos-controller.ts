@@ -3,9 +3,14 @@ import { db } from "../db/db";
 import {
   HttpStatus,
   UpdateVideoInputModel,
-  VideoInputModel,
+  CreateVideoInputModel,
   VideoViewModel,
 } from "../types";
+import {
+  RequestWithBody,
+  RequestWithParamsId,
+  RequestWithParamsIdAndBody,
+} from "../request-types";
 
 export const videosController = {
   getVideos: (req: Request, res: Response) => {
@@ -13,7 +18,7 @@ export const videosController = {
     return;
   },
 
-  getVideoById: (req: Request<{ id: string }>, res: Response) => {
+  getVideoById: (req: RequestWithParamsId, res: Response) => {
     const video = db.find((v) => v.id === parseInt(req.params.id));
 
     if (!video) {
@@ -25,7 +30,7 @@ export const videosController = {
     return;
   },
 
-  createVideo: (req: Request<{}, {}, VideoInputModel>, res: Response) => {
+  createVideo: (req: RequestWithBody<CreateVideoInputModel>, res: Response) => {
     const newVideo: VideoViewModel = {
       id: db.length + 1,
       title: req.body.title,
@@ -37,7 +42,7 @@ export const videosController = {
       publicationDate: new Date().toISOString(),
     };
 
-    db.push(newVideo);
+    db.unshift(newVideo);
 
     res.status(HttpStatus.CREATED).json(newVideo);
 
@@ -45,7 +50,7 @@ export const videosController = {
   },
 
   updateVideo: (
-    req: Request<{ id: string }, {}, UpdateVideoInputModel>,
+    req: RequestWithParamsIdAndBody<UpdateVideoInputModel>,
     res: Response,
   ) => {
     const video = db.find((v) => v.id === parseInt(req.params.id));
