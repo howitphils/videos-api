@@ -111,12 +111,12 @@ export const validateUpdateVideoInput = (
     });
   }
 
-  if (minAgeRestriction !== null || typeof minAgeRestriction !== "number") {
-    errors.errorsMessages.push({
-      message: "minAgeRestriction must be null or a number.",
-      field: "minAgeRestriction",
-    });
-  } else if (minAgeRestriction < 1 || minAgeRestriction > 18) {
+  if (
+    minAgeRestriction !== null &&
+    (typeof minAgeRestriction !== "number" ||
+      minAgeRestriction < 1 ||
+      minAgeRestriction > 18)
+  ) {
     errors.errorsMessages.push({
       message: "minAgeRestriction must be null or a number between 1 and 18.",
       field: "minAgeRestriction",
